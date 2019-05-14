@@ -1,5 +1,5 @@
 ﻿//============== 列表=============================
-//Copyright 2018 何镇汐
+//Copyright 2019 何镇汐
 //Licensed under the MIT license
 //================================================
 import { ISort, sort } from '../core/sort';
@@ -8,7 +8,7 @@ import { util } from '../index';
 /**
  * 列表
  */
-export class Select {
+export class SelectList {
     /**
      * 初始化列表
      * @param items 列表项集合

@@ -19,7 +19,7 @@ import { MessageConfig as config } from '../config/message-config';
         <ng-content></ng-content>
     `
 } )
-export class TableWrapperComponent<T extends IKey> implements AfterContentInit {
+export class Table<T extends IKey> implements AfterContentInit {
     /**
      * 查询延迟
      */
@@ -31,7 +31,7 @@ export class TableWrapperComponent<T extends IKey> implements AfterContentInit {
     /**
      * 显示进度条
      */
-    loading: boolean;
+    @Input() loading: boolean;
     /**
      * 首次加载
      */

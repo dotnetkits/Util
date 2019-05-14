@@ -9,10 +9,13 @@
             <util-textbox for="Name"></util-textbox>
         </nz-form-item>
         <nz-form-item>
+            <util-tree-select url="/api/tree" expand-all="true" width="300"></util-tree-select>
+        </nz-form-item>
+        <nz-form-item>
             <util-select url="/api/form/groupItems" multiple="true" width="500"></util-select>
         </nz-form-item>
         <nz-form-item>
-            <util-select for="Nation" on-change="change()"></util-select>
+            <util-select for="Nation"></util-select>
         </nz-form-item>
         <nz-form-item>
             <util-date-picker for="DateTime"></util-date-picker>
@@ -30,7 +33,7 @@
             <util-switch for="Enabled"></util-switch>
         </nz-form-item>
         <nz-form-item>
-            <util-radio for="Enabled" ></util-radio>
+            <util-radio for="Enabled"></util-radio>
         </nz-form-item>
         <nz-form-item>
             <nz-form-control>
