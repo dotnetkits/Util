@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Util.Ui.Angular.Forms.Configs;
-using Util.Ui.Angular.Forms.Resolvers;
+using Util.Ui.Angular.Resolvers;
 using Util.Ui.Builders;
 using Util.Ui.Configs;
 using Util.Ui.Enums;
-using Util.Ui.Zorro.Enums;
 using Util.Ui.Zorro.Forms.Base;
 using Util.Ui.Zorro.Forms.Builders;
 
@@ -77,30 +76,8 @@ namespace Util.Ui.Zorro.Forms.Renders {
         private void ConfigDatePicker( TagBuilder builder ) {
             if( _config.IsDatePicker == false )
                 return;
-            ConfigDatePickerType( builder );
-            ConfigDateFormat( builder );
-            ConfigShowTime( builder );
-        }
-
-        /// <summary>
-        /// 配置日期选择器类型
-        /// </summary>
-        private void ConfigDatePickerType( TagBuilder builder ) {
-            builder.AddAttribute( "type", _config.GetValue<DatePickerType?>( UiConst.Type ).Description() );
-        }
-
-        /// <summary>
-        /// 配置日期格式化
-        /// </summary>
-        private void ConfigDateFormat( TagBuilder builder ) {
-            builder.AddAttribute( "format", _config.GetValue( UiConst.Format ) );
-        }
-
-        /// <summary>
-        /// 配置显示时间
-        /// </summary>
-        private void ConfigShowTime( TagBuilder builder ) {
-            builder.AddAttribute( "showTime", _config.GetBoolValue( UiConst.ShowTime ) );
+            var render = new DatePickerRender( _config, builder );
+            render.ConfigDatePicker();
         }
 
         /// <summary>

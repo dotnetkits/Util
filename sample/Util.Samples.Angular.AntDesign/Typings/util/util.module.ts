@@ -48,8 +48,11 @@ import { DatePicker } from "./zorro/datepicker-wrapper.component";
 import { TextArea } from "./zorro/textarea-wrapper.component";
 import { Select } from "./zorro/select-wrapper.component";
 import { Radio } from "./zorro/radio-wrapper.component";
+import { CheckboxGroup } from "./zorro/checkbox-group-wrapper.component";
 import { Table } from "./zorro/table-wrapper.component";
 import { Upload } from "./zorro/upload-wrapper.component";
+import { SingleUpload } from "./zorro/single-upload-wrapper.component";
+import { DialogWrapperComponent } from "./zorro/dialog-wrapper.component";
 import { Tree } from "./zorro/tree-wrapper.component";
 import { TreeSelect } from "./zorro/tree-select-wrapper.component";
 import { TreeTable } from "./zorro/tree-table-wrapper.component";
@@ -65,8 +68,8 @@ const components = [
     LineWrapperComponent, ColumnWrapperComponent, BarWrapperComponent, AreaWrapperComponent,
     PieWrapperComponent, RosePieWrapperComponent,
     Button, TextBox, DatePicker, TextArea,
-    Select, Radio,
-    Table, Upload,
+    Select, Radio, CheckboxGroup,
+    Table, Upload, SingleUpload, DialogWrapperComponent,
     Tree, TreeSelect, TreeTable
 ];
 
