@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Razor.TagHelpers;
 using Util.Ui.Angular.Forms.Configs;
+using Util.Ui.Enums;
 using Util.Ui.Renders;
 using Util.Ui.TagHelpers;
-using Util.Ui.Zorro.Enums;
 using Util.Ui.Zorro.Forms.Base;
 using Util.Ui.Zorro.Forms.Renders;
 
@@ -38,7 +38,7 @@ namespace Util.Ui.Zorro.Forms {
         /// <summary>
         /// [nzAllowClear],是否显示清除按钮，默认值： true
         /// </summary>
-        public bool ShowClearButton { get; set; }
+        public bool ShowClear { get; set; }
         /// <summary>
         /// [nzAutoFocus],是否自动获取焦点，默认值： false
         /// </summary>
