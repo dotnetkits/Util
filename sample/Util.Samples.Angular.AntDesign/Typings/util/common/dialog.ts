@@ -15,15 +15,16 @@ export class Dialog {
      * 打开弹出层
      * @param options 弹出层配置
      */
-    static open( options?: IDialogOptions ) {
+    static open( options?: IDialogOptions ):NzModalRef {
         options = options || {};
         if ( options.onBeforeOpen && options.onBeforeOpen() === false )
-            return;
+            return null;
         Dialog.initOptions( options );
         let dialog: NzModalService = Dialog.getModalService();
         let dialogRef: NzModalRef = dialog.create( this.toOptions( options ) );
         dialogRef.afterOpen.subscribe( () => options.onOpen && options.onOpen() );
         dialogRef.afterClose.subscribe( ( result ) => options.onClose && options.onClose( result ) );
+        return dialogRef;
     }
 
     /**
@@ -115,6 +116,9 @@ export class Dialog {
         let dialogRef: NzModalRef = dialog.openModals[dialog.openModals.length - 1];
         if ( !dialogRef )
             return;
+        let content = dialogRef.getContentComponent();
+        if ( !content && dialog.openModals.length > 1 )
+            dialogRef = dialog.openModals[dialog.openModals.length - 2];
         if ( dialogRef["nzOnCancel"]( { result: result, tag: true } ) === false )
             return;
         dialogRef.close( result );

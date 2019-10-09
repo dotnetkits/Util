@@ -29,6 +29,10 @@ export class CheckboxGroup implements OnInit, AfterViewInit {
      */
     @Input() standalone: boolean;
     /**
+     * id
+     */
+    @Input() rawId: string;
+    /**
      * 名称
      */
     @Input() name: string;
@@ -77,7 +81,7 @@ export class CheckboxGroup implements OnInit, AfterViewInit {
     /**
      * 控件模型
      */
-    @ViewChild( 'controlModel' ) controlModel: NgModel;
+    @ViewChild( 'controlModel', { "static": false } ) controlModel: NgModel;
 
     /**
      * 初始化复选框组包装器
